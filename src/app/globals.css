@@ -70,3 +70,46 @@
   animation: spark 0.15s infinite;
   transform-origin: center;
 }
+@slot core;
+
+:root {
+  --color-tomb-bg: #0d0a09;
+  --color-blood-red: #e11d48;
+  --color-sand-gold: #f59e0b;
+  --color-sand-muted: #78350f;
+}
+
+body {
+  background-color: var(--color-tomb-bg);
+  color: #f3f4f6;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* Эффект сетки поверх фонового изображения */
+.scanline-grid {
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  background-size:
+    100% 4px,
+    6px 100%;
+}
+
+/* Брутальные тени */
+.neon-glow-red {
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
+  border-color: rgba(225, 29, 72, 0.6);
+}
+
+.neon-glow-gold {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  border-color: rgba(245, 158, 11, 0.5);
+}

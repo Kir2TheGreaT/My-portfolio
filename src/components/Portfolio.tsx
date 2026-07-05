@@ -1,154 +1,62 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { projects as projectsData } from "../data/portfolio";
+import { motion } from "framer-motion";
 
 export default function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState<"all" | "featured">("all");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
-
-  const filteredProjects =
-    activeFilter === "featured"
-      ? projectsData.filter((p) => p.featured)
-      : projectsData;
-
   return (
-    <section id="portfolio" className="py-20 px-4 relative stone-texture">
-      <div className="max-w-7xl mx-auto">
-        {/* Заголовок секции */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          className="text-center mb-12"
-        >
-          <p className="text-sm font-medieval uppercase tracking-[0.3em] text-stone-light mb-2">
-            ⚔ Your Conquests ⚔
-          </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medieval font-black text-sand-light serious-text">
-            Портфолио
+    <section
+      id="portfolio"
+      className="py-24 bg-[#0a0504] relative border-t-4 border-[#c41e3a] overflow-hidden"
+    >
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] opacity-30 z-10"></div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-black text-[#e8d5b7] tracking-tighter uppercase drop-shadow-[0_2px_2px_#000]">
+            Личный <span className="text-[#c41e3a]">Инвентарь</span>
           </h2>
-          <div className="section-divider w-32 mx-auto mt-4" />
-        </motion.div>
-
-        {/* Фильтры */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
-          className="flex justify-center gap-4 mb-12"
-        >
-          {(["all", "featured"] as const).map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-3 font-medieval uppercase tracking-wider transition-all duration-300 border border-stone/50 ${
-                activeFilter === filter
-                  ? "bg-blood text-white shadow-lg shadow-blood/30"
-                  : "bg-stone-dark text-sand-light hover:bg-blood/50"
-              }`}
-            >
-              {filter === "all" ? "Все работы" : "⭐ Избранные"}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Сетка проектов */}
-        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
-              viewport={{ once: false }}
-              className="project-card group cursor-pointer flex flex-col justify-between border border-stone/30 bg-[#2c2825] rounded-sm overflow-hidden"
-            >
-              <div>
-                {/* Изображение проекта */}
-                <div className="relative overflow-hidden h-52 bg-stone-dark">
-                  <img
-                    src={project.image || "/placeholder.jpg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                  />
-
-                  {/* Оверлей при наведении */}
-                  <div className="absolute inset-0 bg-night/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 p-4">
-                    {project.vercel && (
-                      <a
-                        href={project.vercel}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="serious-btn text-xs px-4 py-2"
-                      >
-                        🚀 Vercel
-                      </a>
-                    )}
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="serious-btn text-xs px-4 py-2"
-                      >
-                        ⚔ GitHub
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                {/* Информация о проекте */}
-                <div className="p-6">
-                  {project.featured && (
-                    <span className="text-[10px] font-medieval uppercase tracking-wider text-blood bg-blood/10 border border-blood/30 px-2 py-0.5 rounded-sm">
-                      ⭐ Featured
-                    </span>
-                  )}
-
-                  <h3 className="text-xl font-medieval text-sand-light mt-3 mb-2">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-stone-light text-sm mb-4 line-clamp-3">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Технологии (всегда прижаты к низу карточки) */}
-              <div className="px-6 pb-6 mt-auto">
-                <div className="flex flex-wrap gap-1.5">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-[10px] px-2 py-0.5 bg-stone-dark text-sand-light border border-stone/50 uppercase"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          <p className="text-[#d4a574] font-mono mt-4 uppercase tracking-widest text-sm">
+            Доступ к исходным кодам и секретным разработкам
+          </p>
         </div>
 
-        {/* Кнопка "Все проекты" */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
-          className="text-center mt-16"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-[#160c08]/90 border-2 border-[#d4a574]/40 p-8 md:p-12 text-center shadow-[0_0_30px_rgba(212,165,116,0.1)] group hover:border-[#d4a574] transition-colors"
         >
+          <div className="w-20 h-20 mx-auto mb-6 bg-[#c41e3a]/20 border border-[#c41e3a] flex items-center justify-center rounded-sm rotate-45 group-hover:rotate-0 transition-all duration-500">
+            <svg
+              className="w-10 h-10 text-[#c41e3a] -rotate-45 group-hover:rotate-0 transition-all duration-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+
+          <h3 className="text-2xl font-black text-[#e8d5b7] uppercase mb-4">
+            GitHub Repository
+          </h3>
+          <p className="text-[#d4a574] mb-8 font-mono text-sm max-w-2xl mx-auto">
+            Здесь хранятся исходные коды боевых задач, пет-проектов и
+            экспериментов с новыми технологиями. Доступ открыт для проверки
+            архитектуры и чистоты кода.
+          </p>
+
           <a
-            href="https://github.com"
+            href="https://github.com/Kir2TheGreaT"
             target="_blank"
             rel="noopener noreferrer"
-            className="serious-btn text-lg px-8 py-4 inline-block"
+            className="inline-block px-8 py-4 bg-transparent border-2 border-[#d4a574] text-[#d4a574] font-black uppercase tracking-widest hover:bg-[#d4a574] hover:text-[#0a0504] transition-all skew-x-[-10deg]"
           >
-            ⚔ Весь инвентарь на GitHub
+            <span className="skew-x-[10deg] block">Изучить арсенал</span>
           </a>
         </motion.div>
       </div>

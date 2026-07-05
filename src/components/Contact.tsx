@@ -1,268 +1,82 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { contactInfo } from "../data/portfolio";
+import { motion } from "framer-motion";
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+const CONTACT_DATA = [
+  {
+    label: "TELEGRAM_UPLINK",
+    value: "@Kir2TheGreaT",
+    href: "https://t.me/Kir2TheGreaT",
+    color: "#0088cc",
+  },
+  {
+    label: "SECURE_MAIL",
+    value: "kir2thegreat@mail.ru",
+    href: "mailto:kir2thegreat@mail.ru",
+    color: "#c41e3a",
+  },
+  {
+    label: "GITHUB_PROFILE",
+    value: "Kir2TheGreaT",
+    href: "https://github.com/Kir2TheGreaT",
+    color: "#d4a574",
+  },
+];
 
 export default function Contact() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSent, setIsSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Здесь можно добавить отправку формы
-    console.log("Form submitted:", formData);
-    setIsSent(true);
-    setTimeout(() => {
-      setIsSent(false);
-      setFormData({ name: "", email: "", message: "" });
-    }, 3000);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   return (
-    <section id="contact" className="py-20 px-4 relative stone-texture">
-      <div className="max-w-6xl mx-auto">
-        {/* Заголовок секции */}
+    <section
+      id="contact"
+      className="py-24 bg-tomb-pattern relative border-t-4 border-[#c41e3a]"
+    >
+      <div className="max-w-4xl mx-auto px-4 relative z-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-6xl font-black text-[#e8d5b7] tracking-tighter uppercase drop-shadow-[0_2px_2px_#000]">
+            Передача <span className="text-[#c41e3a]">Координат</span>
+          </h2>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          className="bg-[#0a0504] border-2 border-[#c41e3a] p-1 shadow-[0_0_30px_rgba(196,30,58,0.2)]"
         >
-          <p className="text-sm font-medieval uppercase tracking-[0.3em] text-stone-light mb-2">
-            ⚔ Send a Raven ⚔
-          </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medieval font-black text-sand-light serious-text">
-            Контакты
-          </h2>
-          <div className="section-divider w-32 mx-auto mt-4" />
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-12 lg:max-w-6xl mx-auto">
-          {/* Контактная информация */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-          >
-            <div className="project-card p-8">
-              <h3 className="text-2xl font-medieval text-sand-light mb-6 uppercase tracking-wider">
-                📜 Связаться со мной
+          <div className="border border-[#c41e3a]/50 p-6 md:p-10">
+            <div className="flex justify-between items-center border-b-2 border-[#c41e3a]/30 pb-4 mb-8">
+              <h3 className="text-2xl font-black text-[#c41e3a] tracking-widest uppercase">
+                ТЕРМИНАЛ СВЯЗИ v1.0
               </h3>
+              <div className="w-3 h-3 bg-[#c41e3a] rounded-full animate-pulse shadow-[0_0_10px_#c41e3a]"></div>
+            </div>
 
-              <div className="space-y-4">
-                {/* Email */}
+            <div className="space-y-6 font-mono">
+              {CONTACT_DATA.map((contact, i) => (
                 <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="flex items-center gap-4 p-4 bg-stone-dark/50 hover:bg-blood/20 transition-colors duration-300"
-                >
-                  <span className="text-2xl">✉️</span>
-                  <div>
-                    <p className="text-sm text-stone-light uppercase tracking-wider">
-                      Email
-                    </p>
-                    <p className="text-sand-light">{contactInfo.email}</p>
-                  </div>
-                </a>
-
-                {/* Telegram */}
-                {contactInfo.telegram && (
-                  <a
-                    href={`https://t.me/${contactInfo.telegram.replace("@", "")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-stone-dark/50 hover:bg-blood/20 transition-colors duration-300"
-                  >
-                    <span className="text-2xl">💬</span>
-                    <div>
-                      <p className="text-sm text-stone-light uppercase tracking-wider">
-                        Telegram
-                      </p>
-                      <p className="text-sand-light">{contactInfo.telegram}</p>
-                    </div>
-                  </a>
-                )}
-
-                {/* GitHub */}
-                <a
-                  href={contactInfo.github}
+                  key={i}
+                  href={contact.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-stone-dark/50 hover:bg-blood/20 transition-colors duration-300"
+                  className="flex flex-col md:flex-row md:items-center justify-between p-4 bg-[#160c08] border border-[#c41e3a]/20 hover:border-[#c41e3a] hover:bg-[#c41e3a]/10 transition-all group"
                 >
-                  <span className="text-2xl">⚔</span>
-                  <div>
-                    <p className="text-sm text-stone-light uppercase tracking-wider">
-                      GitHub
-                    </p>
-                    <p className="text-sand-light">{contactInfo.github}</p>
-                  </div>
+                  <span className="text-[#d4a574] text-sm md:text-base mb-2 md:mb-0">
+                    &gt; {contact.label}:
+                  </span>
+                  <span
+                    className="text-lg md:text-xl font-bold tracking-wider group-hover:scale-105 transition-transform origin-left md:origin-right"
+                    style={{ color: contact.color }}
+                  >
+                    {contact.value}
+                  </span>
                 </a>
-
-                {/* LinkedIn */}
-                {contactInfo.linkedin && (
-                  <a
-                    href={contactInfo.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-stone-dark/50 hover:bg-blood/20 transition-colors duration-300"
-                  >
-                    <span className="text-2xl">💼</span>
-                    <div>
-                      <p className="text-sm text-stone-light uppercase tracking-wider">
-                        LinkedIn
-                      </p>
-                      <p className="text-sand-light">{contactInfo.linkedin}</p>
-                    </div>
-                  </a>
-                )}
-
-                {/* Phone */}
-                {contactInfo.phone && (
-                  <a
-                    href={`tel:${contactInfo.phone}`}
-                    className="flex items-center gap-4 p-4 bg-stone-dark/50 hover:bg-blood/20 transition-colors duration-300"
-                  >
-                    <span className="text-2xl">📞</span>
-                    <div>
-                      <p className="text-sm text-stone-light uppercase tracking-wider">
-                        Phone
-                      </p>
-                      <p className="text-sand-light">{contactInfo.phone}</p>
-                    </div>
-                  </a>
-                )}
-              </div>
-
-              {/* Декоративный текст */}
-              <p className="mt-8 text-stone-light italic text-center">
-                "A message sent is a battle half won."
-              </p>
+              ))}
             </div>
-          </motion.div>
 
-          {/* Форма обратной связи */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-          >
-            <div className="project-card p-8">
-              <h3 className="text-2xl font-medieval text-sand-light mb-6 uppercase tracking-wider">
-                ✉️ Написать сообщение
-              </h3>
-
-              {isSent ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center p-6 bg-blood/20 border-2 border-blood"
-                >
-                  <p className="text-4xl mb-4">🏆</p>
-                  <h4 className="text-xl font-medieval text-sand-light uppercase tracking-wider mb-2">
-                    Message Sent!
-                  </h4>
-                  <p className="text-stone-light">
-                    Your raven has been dispatched. I'll respond soon.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name */}
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medieval uppercase tracking-wider text-sand-light mb-2"
-                    >
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-night border-2 border-stone text-sand-light font-body focus:border-blood focus:outline-none transition-colors duration-300"
-                      placeholder="Enter your name..."
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medieval uppercase tracking-wider text-sand-light mb-2"
-                    >
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-night border-2 border-stone text-sand-light font-body focus:border-blood focus:outline-none transition-colors duration-300"
-                      placeholder="Enter your email..."
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medieval uppercase tracking-wider text-sand-light mb-2"
-                    >
-                      Your Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 bg-night border-2 border-stone text-sand-light font-body focus:border-blood focus:outline-none transition-colors duration-300 resize-vertical"
-                      placeholder="Write your message here..."
-                    />
-                  </div>
-
-                  {/* Submit button */}
-                  <motion.button
-                    type="submit"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="serious-btn w-full text-lg px-8 py-4 pulse-blood"
-                  >
-                    🏹 Send Message
-                  </motion.button>
-                </form>
-              )}
+            <div className="mt-10 text-center text-[#e8d5b7]/50 text-xs font-mono uppercase tracking-widest">
+              Система ожидает входящего соединения...
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

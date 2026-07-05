@@ -51,39 +51,48 @@ export default function AboutMe() {
                 </h3>
                 <ul className="text-[#e8d5b7] space-y-1 pl-4 text-sm md:text-base">
                   <li>
-                    <span className="text-[#d4a574]">[+]</span> React & Next.js
-                    (App Router)
-                  </li>
-                  <li>
                     <span className="text-[#d4a574]">[+]</span> Vue 3 & Nuxt 3
+                    (Pinia, Composition API)
                   </li>
                   <li>
-                    <span className="text-[#d4a574]">[+]</span> TypeScript
-                    Strict Mode
+                    <span className="text-[#d4a574]">[+]</span> React & Next.js
+                    (App Router, Zustand)
+                  </li>
+                  <li>
+                    <span className="text-[#d4a574]">[+]</span> TypeScript /
+                    JavaScript (ES6+)
                   </li>
                   <li>
                     <span className="text-[#d4a574]">[+]</span> Tailwind CSS /
-                    Framer Motion
+                    SCSS / БЭМ
+                  </li>
+                  <li>
+                    <span className="text-[#d4a574]">[+]</span> REST API / JWT /
+                    SSR
                   </li>
                 </ul>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-[#c41e3a] font-bold text-xl uppercase border-l-4 border-[#c41e3a] pl-3">
-                  Инфраструктура
+                  Инфраструктура & Тулзы
                 </h3>
                 <ul className="text-[#e8d5b7] space-y-1 pl-4 text-sm md:text-base">
+                  <li>
+                    <span className="text-[#d4a574]">[+]</span> Git, CI/CD
+                    (Vercel), Vite, Figma
+                  </li>
                   <li>
                     <span className="text-[#d4a574]">[+]</span> Docker &
                     Containerization
                   </li>
                   <li>
-                    <span className="text-[#d4a574]">[+]</span> Self-Hosted
-                    Solutions
+                    <span className="text-[#d4a574]">[+]</span> AI Tools
+                    (Copilot, ChatGPT, Claude)
                   </li>
                   <li>
-                    <span className="text-[#d4a574]">[+]</span> Bazzite / Linux
-                    environments
+                    <span className="text-[#d4a574]">[+]</span> Linux
+                    environments (Bazzite)
                   </li>
                 </ul>
               </div>
@@ -104,9 +113,11 @@ export default function AboutMe() {
                   Бэкграунд
                 </h3>
                 <p className="text-[#e8d5b7] pl-4 text-sm leading-relaxed">
-                  Исторический факультет, магистратура. Способность
-                  анализировать массивные объемы данных прошлого для идеального
-                  проектирования архитектуры будущего.
+                  Магистратура (2020) и Аспирантура (2023), Исторический
+                  факультет ДонГУ. Способность анализировать массивные объемы
+                  данных прошлого для проектирования архитектуры будущего.
+                  Интенсивный годовой курс профильного обучения
+                  Frontend-разработке.
                 </p>
               </div>
             </div>

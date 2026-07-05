@@ -18,23 +18,31 @@ const EXP_DATA: ExperienceData[] = [
     role: "Middle+ Frontend Developer",
     mission:
       "Поиск новой горячей точки (Remote/Hybrid). Готовность развертывать масштабные SPA и SSR приложения без потери производительности.",
-    ammo: "React, Next.js, TypeScript",
+    ammo: "Vue 3, React, Next.js, Nuxt 3, TS",
   },
   {
     id: 2,
-    year: "Проект: Table CRM",
-    role: "Архитектор интерфейса",
+    year: "Проект",
+    role: "Table CRM",
     mission:
-      "Разработка панели управления заказами для ритейла. Спроектировал быстрый и отзывчивый дашборд с использованием серверных функций.",
-    ammo: "Next.js App Router, Serverless",
+      "Панель управления заказами для ритейла. Разработал прокси-сервер на Next.js API Routes для безопасного взаимодействия с внешним API и обхода ограничений CORS. Настроил CI/CD деплой на Vercel. Результат: масштабируемое приложение.",
+    ammo: "Next.js (App Router), TS, Tailwind, Serverless",
   },
   {
     id: 3,
-    year: "Проект: MORENT",
-    role: "Lead Frontend",
+    year: "Проект",
+    role: "MORENT",
     mission:
-      "Создание агрегатора аренды автомобилей. Интеграция с Yandex Maps API, сложный стейт-менеджмент и адаптивный UI.",
-    ammo: "Nuxt 3, Vue 3, Yandex Maps",
+      "Агрегатор аренды автомобилей. Спроектировал архитектуру с нуля, добившись высокой скорости загрузки благодаря SSR. Реализовал сложную систему фильтрации и поиска, оптимизировал UX для мобильных устройств.",
+    ammo: "Nuxt 3, Vue 3, Pinia, SCSS, Yandex Maps",
+  },
+  {
+    id: 4,
+    year: "Проект",
+    role: "Tronk",
+    mission:
+      "Task Manager. Спроектировал и внедрил авторизацию (JWT) и личный кабинет пользователя. Разработал интерактивный CRUD-интерфейс для задач с мгновенным обновлением UI.",
+    ammo: "Vue 3, Nuxt, REST API, JWT",
   },
 ];
 
