@@ -104,7 +104,7 @@ export default function Contact() {
 
             {/* Статус-бар */}
             <div className="mt-10 text-center text-[#e8d5b7]/40 text-xs font-mono uppercase tracking-widest">
-              Система ожидает входящего соединения... Квадрант чист.
+              Система ожидает входящего соединения... Квадрат чист.
             </div>
           </div>
         </motion.div>
