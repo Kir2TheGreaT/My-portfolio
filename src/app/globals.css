@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  /* Твоя цветовая палитра Serious Sam */
+  --color-tomb-bg: #160c08;
+  --color-sand-gold: #e8d5b7;
+  --color-sand-muted: #d4a574;
+  --color-blood-red: #c41e3a;
+}
+
+@layer base {
+  body {
+    @apply bg-tomb-bg text-sand-gold antialiased font-sans;
+  }
+
+  button {
+    @apply appearance-none outline-none ring-0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-tomb-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-blood-red);
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .bg-tomb-pattern {
+    background-color: var(--color-tomb-bg);
+    background-image:
+      radial-gradient(var(--color-sand-muted) 0.7px, transparent 0.7px),
+      radial-gradient(var(--color-sand-muted) 0.7px, var(--color-tomb-bg) 0.7px);
+    background-size: 24px 24px;
+    background-position:
+      0 0,
+      12px 12px;
+  }
+
+  .neon-border-red {
+    box-shadow:
+      0 0 10px var(--color-blood-red),
+      inset 0 0 10px var(--color-blood-red);
+    border: 1px solid var(--color-blood-red);
+  }
+}
+
+@keyframes spark {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4) rotate(180deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 5px var(--color-blood-red));
+  }
+  100% {
+    transform: scale(0.8) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+.animate-spark {
+  animation: spark 0.15s infinite;
+  transform-origin: center;
+}
