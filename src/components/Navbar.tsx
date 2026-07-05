@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NavItem {
   name: string;
@@ -9,11 +9,11 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { name: 'Главная', href: '#home' },
-  { name: 'Экипировка', href: '#skills' },
-  { name: 'Инвентарь', href: '#portfolio' },
-  { name: 'Боевой путь', href: '#experience' },
-  { name: 'Координаты', href: '#contact' },
+  { name: "Главная", href: "#home" },
+  { name: "Экипировка", href: "#skills" },
+  { name: "Инвентарь", href: "#portfolio" },
+  { name: "Боевой путь", href: "#experience" },
+  { name: "Координаты", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -22,34 +22,72 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleScrollTo = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
     setIsOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#160c08]/95 backdrop-blur border-b border-[#c41e3a]/30 shadow-[0_4px_20px_rgba(196,30,58,0.1)]' : 'bg-transparent'}`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-[#160c08]/95 backdrop-blur border-b border-[#c41e3a]/30 shadow-[0_4px_20px_rgba(196,30,58,0.1)]" : "bg-transparent"}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
           {/* Логотип с бомбой */}
-          <div className="flex-shrink-0 flex items-center gap-2 group cursor-pointer">
-            <svg className="w-10 h-10 transform transition-transform group-hover:rotate-12 group-hover:scale-110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="60" r="30" fill="#111" stroke="#d4a574" strokeWidth="4"/>
-              <path d="M50 30 V 20 C 50 10, 70 10, 70 20" stroke="#d4a574" strokeWidth="3" fill="none" />
-              <rect x="42" y="27" width="16" height="8" fill="#555" stroke="#d4a574" strokeWidth="2"/>
-              <path className="animate-spark" d="M68 20 L72 15 L76 20 L72 25 Z" />
+          <a
+            href="#home"
+            onClick={(e) => handleScrollTo(e, "#home")}
+            className="flex-shrink-0 flex items-center gap-2 group cursor-pointer"
+          >
+            <svg
+              className="w-10 h-10 transform transition-transform group-hover:rotate-12 group-hover:scale-110"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="60"
+                r="30"
+                fill="#111"
+                stroke="#d4a574"
+                strokeWidth="4"
+              />
+              <path
+                d="M50 30 V 20 C 50 10, 70 10, 70 20"
+                stroke="#d4a574"
+                strokeWidth="3"
+                fill="none"
+              />
+              <rect
+                x="42"
+                y="27"
+                width="16"
+                height="8"
+                fill="#555"
+                stroke="#d4a574"
+                strokeWidth="2"
+              />
+              <path
+                className="animate-spark"
+                d="M68 20 L72 15 L76 20 L72 25 Z"
+              />
             </svg>
-            <span className="font-black text-2xl tracking-widest text-[#d4a574] group-hover:text-[#c41e3a] transition-colors">KIRILL<span className="text-[#c41e3a]">.DEV</span></span>
-          </div>
+            <span className="font-black text-2xl tracking-widest text-[#d4a574] group-hover:text-[#c41e3a] transition-colors">
+              KIRILL<span className="text-[#c41e3a]">.DEV</span>
+            </span>
+          </a>
 
           {/* Десктопное меню */}
           <div className="hidden md:flex space-x-8">
@@ -67,12 +105,30 @@ export default function Navbar() {
 
           {/* Мобильный бургер */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-[#d4a574] hover:text-[#c41e3a] focus:outline-none p-2">
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-[#d4a574] hover:text-[#c41e3a] focus:outline-none p-2"
+            >
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
                 {isOpen ? (
-                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 ) : (
-                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 )}
               </svg>
             </button>

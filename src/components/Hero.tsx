@@ -4,6 +4,18 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
+  // Функция для плавного перемещения к секциям
+  const handleScrollTo = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -60,19 +72,28 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Боевые кнопки */}
+        {/* Боевые кнопки (теперь с прицелом на нужные секции) */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-6 mt-16"
         >
-          <button className="px-8 py-4 bg-blood-red text-sand-gold font-black uppercase tracking-widest neon-border-red hover:bg-rose-900 hover:scale-105 transition-all skew-x-[-10deg]">
+          <a
+            href="#portfolio"
+            onClick={(e) => handleScrollTo(e, "#portfolio")}
+            className="px-8 py-4 bg-blood-red text-sand-gold font-black uppercase tracking-widest neon-border-red hover:bg-rose-900 hover:scale-105 transition-all skew-x-[-10deg] inline-block text-center cursor-pointer"
+          >
             <span className="skew-x-[10deg] block">Смотреть инвентарь</span>
-          </button>
-          <button className="px-8 py-4 bg-black/60 backdrop-blur-sm border-2 border-sand-muted text-sand-muted font-black uppercase tracking-widest hover:bg-sand-muted/20 hover:shadow-[0_0_15px_rgba(212,165,116,0.6)] hover:scale-105 transition-all skew-x-[-10deg]">
+          </a>
+
+          <a
+            href="#contact"
+            onClick={(e) => handleScrollTo(e, "#contact")}
+            className="px-8 py-4 bg-black/60 backdrop-blur-sm border-2 border-sand-muted text-sand-muted font-black uppercase tracking-widest hover:bg-sand-muted/20 hover:shadow-[0_0_15px_rgba(212,165,116,0.6)] hover:scale-105 transition-all skew-x-[-10deg] inline-block text-center cursor-pointer"
+          >
             <span className="skew-x-[10deg] block">Вызвать на дуэль</span>
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

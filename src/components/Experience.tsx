@@ -15,7 +15,7 @@ const EXP_DATA: ExperienceData[] = [
   {
     id: 1,
     year: "Текущее время",
-    role: "Middle+ Frontend Developer",
+    role: "Junior/Middle Frontend Developer",
     mission:
       "Поиск новой горячей точки (Remote/Hybrid). Готовность развертывать масштабные SPA и SSR приложения без потери производительности.",
     ammo: "Vue 3, React, Next.js, Nuxt 3, TS",
