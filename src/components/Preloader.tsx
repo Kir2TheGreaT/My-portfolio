@@ -7,7 +7,6 @@ import Image from "next/image";
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
 
-  // Автоматический запуск анимации ворот ровно через 2 секунды
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
