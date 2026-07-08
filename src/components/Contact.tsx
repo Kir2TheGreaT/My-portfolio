@@ -24,6 +24,13 @@ const CONTACT_DATA = [
 ];
 
 export default function Contact() {
+  // Функция для воспроизведения выстрела из пушки
+  const playCannonShot = () => {
+    const audio = new Audio("/CannonFire.wav");
+    audio.volume = 0.2;
+    audio.play().catch((e) => console.log("Звук выстрела заблокирован:", e));
+  };
+
   return (
     <section
       id="contact"
@@ -80,6 +87,9 @@ export default function Contact() {
                   href={contact.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={
+                    playCannonShot
+                  } /* Воспроизведение выстрела при переходе */
                   className="flex flex-col md:flex-row md:items-center justify-between p-4 bg-[#160c08]/80 border border-[#c41e3a]/20 hover:border-[#c41e3a] hover:bg-[#c41e3a]/10 hover:shadow-[0_0_20px_rgba(196,30,58,0.15)] transition-all group/item relative overflow-hidden"
                 >
                   {/* Боковой лазерный маркер при наведении */}

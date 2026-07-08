@@ -3,6 +3,13 @@
 import { motion } from "framer-motion";
 
 export default function Portfolio() {
+  // Функция для воспроизведения выстрела из пушки
+  const playCannonShot = () => {
+    const audio = new Audio("/CannonFire.wav");
+    audio.volume = 0.2;
+    audio.play().catch((e) => console.log("Звук выстрела заблокирован:", e));
+  };
+
   return (
     <section
       id="portfolio"
@@ -68,6 +75,7 @@ export default function Portfolio() {
               href="https://github.com/Kir2TheGreaT"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={playCannonShot} /* Добавили звук пушки на клик */
               className="mt-auto inline-block px-8 py-4 bg-transparent border-2 border-[#d4a574] text-[#d4a574] font-black uppercase tracking-widest hover:bg-[#d4a574] hover:text-[#0a0504] transition-all skew-x-[-10deg]"
             >
               <span className="skew-x-[10deg] block">Изучить репозиторий</span>
@@ -121,6 +129,7 @@ export default function Portfolio() {
               href="https://diplomas-six.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={playCannonShot} /* Добавили звук пушки на клик */
               className="mt-auto inline-block px-8 py-4 bg-[#c41e3a]/10 border-2 border-[#c41e3a] text-[#c41e3a] font-black uppercase tracking-widest hover:bg-[#c41e3a] hover:text-[#0a0504] transition-all skew-x-[-10deg] shadow-[0_0_15px_rgba(196,30,58,0.4)]"
             >
               <span className="skew-x-[10deg] block">Запустить симуляцию</span>
