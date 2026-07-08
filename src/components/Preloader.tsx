@@ -6,25 +6,15 @@ import Image from "next/image";
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
-  const [isReady, setIsReady] = useState(false);
 
-  // Имитация загрузки
+  // Автоматический запуск анимации ворот ровно через 2 секунды
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsReady(true);
+      setLoading(false);
     }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
-
-  // Функция активации: звук + запуск анимации ворот
-  const handleActivate = () => {
-    const audio = new Audio("/Voicy_Serious Firepower.mp3");
-    audio.volume = 0.2;
-    audio.play().catch((e) => console.log("Браузер блокирует звук", e));
-
-    setLoading(false);
-  };
 
   return (
     <AnimatePresence>
@@ -70,22 +60,13 @@ export default function Preloader() {
               />
             </div>
 
-            {/* Логика текста */}
+            {/* Пульсирующий текст загрузки арсенала */}
             <motion.div
               animate={{ opacity: [0.2, 1, 0.2] }}
               transition={{ repeat: Infinity, duration: 0.8 }}
               className="mt-6 font-black tracking-[0.3em] uppercase text-sm md:text-xl text-center"
             >
-              {isReady ? (
-                <button
-                  onClick={handleActivate}
-                  className="text-white hover:text-blood-red transition-colors border border-white/20 px-6 py-2 rounded-full cursor-pointer bg-black/40 backdrop-blur-sm"
-                >
-                  [ КЛИК ДЛЯ АКТИВАЦИИ ]
-                </button>
-              ) : (
-                <span className="text-blood-red">Загрузка арсенала...</span>
-              )}
+              <span className="text-blood-red">Загрузка арсенала...</span>
             </motion.div>
           </motion.div>
         </motion.div>
