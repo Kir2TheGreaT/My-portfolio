@@ -135,12 +135,11 @@ export default function AboutMe() {
 
               <div className="space-y-2">
                 <h3 className="text-[#c41e3a] font-bold text-xl uppercase border-l-4 border-[#c41e3a] pl-3">
-                  Слайсинг Реальности
+                  3D Printing
                 </h3>
                 <p className="text-[#e8d5b7] pl-4 text-sm leading-relaxed">
                   3D Printing Enthusiast. Печать объектов физического мира с
-                  идеальной калибровкой. Работа со слайсерами, кастомное
-                  охлаждение и термооптимизация.
+                  идеальной калибровкой на 3D принтере.
                 </p>
               </div>
 

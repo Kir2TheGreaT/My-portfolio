@@ -15,34 +15,42 @@ const EXP_DATA: ExperienceData[] = [
   {
     id: 1,
     year: "Текущее время",
-    role: "Junior/Middle Frontend Developer",
+    role: "Middle Frontend Developer",
     mission:
-      "Поиск новой горячей точки (Remote/Hybrid). Готовность развертывать масштабные SPA и SSR приложения без потери производительности.",
-    ammo: "Vue 3, React, Next.js, Nuxt 3, TS",
+      "Поиск новой локации (Remote/Hybrid). Готовность проектировать и развертывать высоконагруженные SPA и SSR приложения без потери производительности и с идеальным DX.",
+    ammo: "Vue 3, Nuxt 3, React, Next.js, TS",
   },
   {
     id: 2,
-    year: "Проект",
-    role: "Table CRM",
+    year: "Март 2023 — Март 2026",
+    role: "SQNS — Frontend Developer",
     mission:
-      "Панель управления заказами для ритейла. Разработал прокси-сервер на Next.js API Routes для безопасного взаимодействия с внешним API и обхода ограничений CORS. Настроил CI/CD деплой на Vercel. Результат: масштабируемое приложение.",
-    ammo: "Next.js (App Router), TS, Tailwind, Serverless",
+      "Разработка B2B/B2C систем и веб-сервисов под ключ. Спроектировал клиентскую архитектуру на Vue 3 / Nuxt 3 и Next.js. Провел глубокий рефакторинг legacy-модулей (ускорение рендеринга на 25-35%), создал переиспользуемый UI Kit на Tailwind/SCSS и настроил CI/CD процессы.",
+    ammo: "Vue 3, Nuxt 3, React, Next.js, TS, Vite",
   },
   {
     id: 3,
-    year: "Проект",
-    role: "MORENT",
+    year: "Проект • SQNS",
+    role: "Table CRM",
     mission:
-      "Агрегатор аренды автомобилей. Спроектировал архитектуру с нуля, добившись высокой скорости загрузки благодаря SSR. Реализовал сложную систему фильтрации и поиска, оптимизировал UX для мобильных устройств.",
-    ammo: "Nuxt 3, Vue 3, Pinia, SCSS, Yandex Maps",
+      "Панель управления заказами для ритейла. Разработал безопасный прокси-слой на Next.js API Routes / Serverless Functions для обхода ограничений CORS и изоляции секретных ключей. Настроил CI/CD деплой на Vercel.",
+    ammo: "Next.js (App Router), TS, Tailwind, Serverless",
   },
   {
     id: 4,
-    year: "Проект",
+    year: "Проект • SQNS",
+    role: "MORENT",
+    mission:
+      "Агрегатор аренды автомобилей. Спроектировал SSR-архитектуру с нуля (Nuxt 3), добившись FCP < 1 сек. Интегрировал Yandex Maps API с оптимизацией рендеринга маркеров и построит сложную систему фильтрации.",
+    ammo: "Nuxt 3, Vue 3, Pinia, SCSS, Yandex Maps",
+  },
+  {
+    id: 5,
+    year: "Проект • SQNS",
     role: "Tronk",
     mission:
-      "Task Manager. Спроектировал и внедрил авторизацию (JWT) и личный кабинет пользователя. Разработал интерактивный CRUD-интерфейс для задач с мгновенным обновлением UI.",
-    ammo: "Vue 3, Nuxt, REST API, JWT",
+      "Task Management Platform. Спроектировал и внедрил систему аутентификации (JWT token refresh pattern, защищенные роуты). Разработал интерактивный CRUD-интерфейс задач с оптимистичными обновлениями.",
+    ammo: "Vue 3, Nuxt, REST API, JWT, Pinia",
   },
 ];
 

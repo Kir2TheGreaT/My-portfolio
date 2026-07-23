@@ -57,8 +57,8 @@ export default function Hero() {
           className="flex flex-row justify-around md:justify-center items-center w-full gap-4 md:gap-12 mt-12 bg-black/50 p-6 border-y-2 border-blood-red/50 backdrop-blur-md"
         >
           {[
-            { val: "1+", label: " года выживания" },
-            { val: "30+", label: "Боевых задач" },
+            { val: "3+", label: " года выживания" },
+            { val: "100+", label: "Боевых задач" },
             { val: "100%", label: "Strict Type" },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center flex-1">
