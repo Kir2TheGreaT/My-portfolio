@@ -35,8 +35,8 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* Сетка на 2 колонки */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Сетка: 1 колонка на телефоне, 2 на планшете, 3 на десктопе */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* СЛОТ 1: GITHUB */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, x: -20 }}
@@ -72,7 +72,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={playCannonShot} /* Добавили звук пушки на клик */
-              className="mt-auto inline-block px-8 py-4 bg-transparent border-2 border-[#d4a574] text-[#d4a574] font-bold uppercase tracking-widest hover:bg-[#d4a574] hover:text-[#0a0504] transition-colors duration-200 skew-x-[-10deg]"
+              className="mt-auto inline-block px-8 lg:px-4 py-4 lg:text-sm bg-transparent border-2 border-[#d4a574] text-[#d4a574] font-bold uppercase tracking-widest hover:bg-[#d4a574] hover:text-[#0a0504] transition-colors duration-200 skew-x-[-10deg]"
             >
               <span className="skew-x-[10deg] block">Изучить репозиторий</span>
             </a>
@@ -122,9 +122,55 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={playCannonShot} /* Добавили звук пушки на клик */
-              className="mt-auto inline-block px-8 py-4 bg-blood-red/10 border-2 border-blood-red text-blood-text font-bold uppercase tracking-widest hover:bg-blood-red hover:text-sand-gold transition-colors duration-200 skew-x-[-10deg]"
+              className="mt-auto inline-block px-8 lg:px-4 py-4 lg:text-sm bg-blood-red/10 border-2 border-blood-red text-blood-text font-bold uppercase tracking-widest hover:bg-blood-red hover:text-sand-gold transition-colors duration-200 skew-x-[-10deg]"
             >
               <span className="skew-x-[10deg] block">Запустить симуляцию</span>
+            </a>
+          </motion.div>
+
+          {/* СЛОТ 3: 3D PRINT STUDIO */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col bg-[#0a0504]/90 backdrop-blur-sm border-2 border-[#d4a574]/40 p-8 md:p-10 text-center shadow-[0_0_40px_rgba(0,0,0,0.7)] group hover:border-[#d4a574] transition-colors relative md:col-span-2 lg:col-span-1"
+          >
+            <div className="w-20 h-20 mx-auto mb-6 bg-[#d4a574]/10 border border-[#d4a574] flex items-center justify-center rounded-sm rotate-45 group-hover:rotate-0 transition-all duration-500 shrink-0">
+              <svg
+                className="w-10 h-10 text-[#d4a574] -rotate-45 group-hover:rotate-0 transition-all duration-500"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="square"
+                  strokeLinejoin="miter"
+                  d="M12 2l9 5v10l-9 5-9-5V7l9-5zM3 7l9 5 9-5M12 12v10"
+                />
+              </svg>
+            </div>
+
+            <h3 className="text-3xl font-bold text-sand-gold uppercase mb-3 tracking-wide">
+              3D Print Studio
+            </h3>
+            <p className="text-sand-muted mb-8 text-base leading-relaxed grow max-w-[38ch] mx-auto">
+              Сайт-портфолио студии 3D-печати на{" "}
+              <span className="text-blood-text font-bold">Nuxt 4</span> и{" "}
+              <span className="text-blood-text font-bold">Tailwind</span>:
+              каталог работ, калькулятор примерной стоимости и светлая с тёмной
+              темами.
+            </p>
+
+            <a
+              href="https://my-3d-print-site-xqmr.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={playCannonShot}
+              className="mt-auto inline-block px-8 lg:px-4 py-4 lg:text-sm bg-transparent border-2 border-[#d4a574] text-[#d4a574] font-bold uppercase tracking-widest hover:bg-[#d4a574] hover:text-[#0a0504] transition-colors duration-200 skew-x-[-10deg]"
+            >
+              <span className="skew-x-[10deg] block">Открыть сайт</span>
             </a>
           </motion.div>
         </div>

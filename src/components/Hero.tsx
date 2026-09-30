@@ -41,7 +41,7 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-6"
         >
-          <h1 className="text-6xl sm:text-7xl md:text-[6rem] leading-none font-bold text-sand-gold [text-shadow:0_4px_24px_rgba(0,0,0,0.85)]">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] leading-none font-extrabold text-sand-gold [text-shadow:0_4px_24px_rgba(0,0,0,0.85)]">
             KIRILL<span className="text-sand-muted">.DEV</span>
           </h1>
           <p className="mt-4 text-base md:text-xl font-semibold uppercase tracking-[0.2em] text-sand-muted [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">

@@ -52,6 +52,14 @@ const EXP_DATA: ExperienceData[] = [
       "Task Management Platform. Спроектировал и внедрил систему аутентификации (JWT token refresh pattern, защищенные роуты). Разработал интерактивный CRUD-интерфейс задач с оптимистичными обновлениями.",
     ammo: "Vue 3, Nuxt, REST API, JWT, Pinia",
   },
+  {
+    id: 6,
+    year: "Личный проект",
+    role: "3D Print Studio",
+    mission:
+      "Сайт-портфолио студии 3D-печати: каталог работ с лентой и лайтбоксом, калькулятор примерной стоимости по материалу и весу модели, светлая и тёмная темы. Статическая сборка на Nuxt 4, деплой на Vercel.",
+    ammo: "Nuxt 4, Vue 3, TS, Tailwind, SCSS, Vercel",
+  },
 ];
 
 export default function Experience() {

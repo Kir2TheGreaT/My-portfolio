@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Oswald, Manrope, JetBrains_Mono } from "next/font/google";
+import { Exo_2, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const display = Oswald({
+const display = Exo_2({
   subsets: ["latin", "cyrillic"],
   variable: "--face-display",
 });
-const body = Manrope({
+const body = IBM_Plex_Sans({
   subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
   variable: "--face-body",
 });
-const code = JetBrains_Mono({
+const code = IBM_Plex_Mono({
   subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "700"],
   variable: "--face-code",
 });
 

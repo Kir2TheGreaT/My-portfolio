@@ -13,7 +13,7 @@
 
 @theme inline {
   --font-sans: var(--face-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--face-display), "Arial Narrow", sans-serif;
+  --font-display: var(--face-display), ui-sans-serif, sans-serif;
   --font-mono: var(--face-code), ui-monospace, monospace;
 }
 
