@@ -1,3 +1,4 @@
+import MotionProvider from "@/components/MotionProvider";
 import Preloader from "@/components/Preloader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -8,19 +9,21 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Preloader />
-      <Navbar />
-      <Hero />
-      <AboutMe />
+    <MotionProvider>
+      <main className="min-h-screen">
+        <Preloader />
+        <Navbar />
+        <Hero />
+        <AboutMe />
 
-      {/* Секция с GitHub */}
-      <Portfolio />
+        {/* Секция с GitHub */}
+        <Portfolio />
 
-      <Experience />
+        <Experience />
 
-      {/* Секция связи */}
-      <Contact />
-    </main>
+        {/* Секция связи */}
+        <Contact />
+      </main>
+    </MotionProvider>
   );
 }

@@ -48,7 +48,7 @@ export default function Navbar() {
           <a
             href="#home"
             onClick={(e) => handleScrollTo(e, "#home")}
-            className="flex-shrink-0 flex items-center gap-2 group cursor-pointer"
+            className="flex-shrink-0 flex items-center gap-2 group cursor-pointer min-h-11"
           >
             <svg
               className="w-10 h-10 transform transition-transform group-hover:rotate-12 group-hover:scale-110"
@@ -96,7 +96,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleScrollTo(e, item.href)}
-                className="text-[#e8d5b7] hover:text-[#c41e3a] font-bold tracking-wider uppercase text-sm transition-all hover:drop-shadow-[0_0_8px_rgba(196,30,58,0.8)]"
+                className="text-[#efdfc2] hover:text-[#ff6b7f] font-semibold tracking-wider uppercase text-sm transition-colors duration-200 py-2"
               >
                 {item.name}
               </a>
@@ -107,7 +107,9 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#d4a574] hover:text-[#c41e3a] focus:outline-none p-2"
+              aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
+              aria-expanded={isOpen}
+              className="text-[#d4a574] hover:text-[#ff6b7f] p-2 -mr-2"
             >
               <svg
                 className="w-8 h-8"

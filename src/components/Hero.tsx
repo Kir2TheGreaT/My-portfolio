@@ -41,12 +41,12 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-6"
         >
-          <span className="text-blood-red font-bold tracking-[0.3em] uppercase mb-4 block drop-shadow-[0_0_5px_rgba(0,0,0,0.8)]">
-            Serious Developer
-          </span>
-          <h1 className="text-6xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-sand-gold to-sand-muted drop-shadow-[0_5px_10px_rgba(0,0,0,1)] tracking-tighter">
-            KIRILL.DEV
+          <h1 className="text-6xl sm:text-7xl md:text-[6rem] leading-none font-bold text-sand-gold [text-shadow:0_4px_24px_rgba(0,0,0,0.85)]">
+            KIRILL<span className="text-sand-muted">.DEV</span>
           </h1>
+          <p className="mt-4 text-base md:text-xl font-semibold uppercase tracking-[0.2em] text-sand-muted [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
+            Serious Developer
+          </p>
         </motion.div>
 
         {/* Блок статистики */}
@@ -54,7 +54,7 @@ export default function Hero() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="flex flex-row justify-around md:justify-center items-center w-full gap-4 md:gap-12 mt-12 bg-black/50 p-6 border-y-2 border-blood-red/50 backdrop-blur-md"
+          className="flex flex-row justify-around md:justify-center items-start w-full gap-4 md:gap-14 mt-12 bg-black/65 px-6 py-5 md:px-10 border-y border-blood-red/60"
         >
           {[
             { val: "1+", label: " года выживания" },
@@ -62,10 +62,10 @@ export default function Hero() {
             { val: "100%", label: "Strict Type" },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center flex-1">
-              <span className="text-3xl md:text-5xl font-black text-blood-red drop-shadow-[0_0_15px_rgba(196,30,58,0.8)]">
+              <span className="font-display text-4xl md:text-5xl font-bold text-blood-text">
                 {stat.val}
               </span>
-              <span className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-sand-gold text-center mt-2 whitespace-nowrap">
+              <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-sand-gold text-center mt-2">
                 {stat.label}
               </span>
             </div>
@@ -82,7 +82,7 @@ export default function Hero() {
           <a
             href="#portfolio"
             onClick={(e) => handleScrollTo(e, "#portfolio")}
-            className="px-8 py-4 bg-blood-red text-sand-gold font-black uppercase tracking-widest neon-border-red hover:bg-rose-900 hover:scale-105 transition-all skew-x-[-10deg] inline-block text-center cursor-pointer"
+            className="px-8 py-4 bg-blood-red text-sand-gold font-bold uppercase tracking-widest hover:bg-[#a3182f] hover:-translate-y-0.5 transition-[background-color,transform] duration-200 ease-out skew-x-[-10deg] inline-block text-center cursor-pointer"
           >
             <span className="skew-x-[10deg] block">Смотреть инвентарь</span>
           </a>
@@ -90,7 +90,7 @@ export default function Hero() {
           <a
             href="#contact"
             onClick={(e) => handleScrollTo(e, "#contact")}
-            className="px-8 py-4 bg-black/60 backdrop-blur-sm border-2 border-sand-muted text-sand-muted font-black uppercase tracking-widest hover:bg-sand-muted/20 hover:shadow-[0_0_15px_rgba(212,165,116,0.6)] hover:scale-105 transition-all skew-x-[-10deg] inline-block text-center cursor-pointer"
+            className="px-8 py-4 bg-black/60 border-2 border-sand-muted text-sand-muted font-bold uppercase tracking-widest hover:bg-sand-muted hover:text-tomb-bg hover:-translate-y-0.5 transition-[background-color,color,transform] duration-200 ease-out skew-x-[-10deg] inline-block text-center cursor-pointer"
           >
             <span className="skew-x-[10deg] block">Вызвать на дуэль</span>
           </a>

@@ -35,7 +35,7 @@ export default function AboutMe() {
             fill="none"
           />
           <path
-            d="M50 5 L50 20 M50 80 L50 95 M5 L50 20 L50 50 M95 50 L80 50 M18 18 L29 29 M82 82 L71 71 M18 82 L29 71 M82 18 L71 29"
+            d="M50 5 L50 20 M50 80 L50 95 M5 50 L20 50 M95 50 L80 50 M18 18 L29 29 M82 82 L71 71 M18 82 L29 71 M82 18 L71 29"
             stroke="currentColor"
             strokeWidth="2"
           />
@@ -53,39 +53,39 @@ export default function AboutMe() {
           className="bg-[#050202]/95 border-2 border-[#c41e3a] p-1 shadow-[0_0_40px_rgba(196,30,58,0.25)] relative"
         >
           {/* Декоративные угловые фиксаторы в стиле древних храмовых блоков */}
-          <div className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-[#d4a574] -mt-[2px] -ml-[2px]"></div>
-          <div className="absolute top-0 right-0 w-4 h-4 border-t-4 border-r-4 border-[#d4a574] -mt-[2px] -mr-[2px]"></div>
-          <div className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-[#d4a574] -mb-[2px] -ml-[2px]"></div>
-          <div className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-[#d4a574] -mb-[2px] -mr-[2px]"></div>
+          <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-sand-muted -mt-[2px] -ml-[2px]"></div>
+          <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-sand-muted -mt-[2px] -mr-[2px]"></div>
+          <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-sand-muted -mb-[2px] -ml-[2px]"></div>
+          <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-sand-muted -mb-[2px] -mr-[2px]"></div>
 
           <div className="border border-[#c41e3a]/40 p-6 md:p-10 relative">
             {/* Header терминала */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-[#c41e3a]/30 pb-4 mb-8">
               <div>
-                <h2 className="text-3xl font-black text-[#c41e3a] tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                <h2 className="text-4xl md:text-5xl font-bold text-blood-text tracking-wide uppercase">
                   NETRICSA v1.03
                 </h2>
-                <p className="text-[#d4a574] text-xs md:text-sm font-mono mt-1">
+                <p className="text-sand-muted text-sm font-mono mt-2">
                   NEuro-TRonically Implanted Combat Situation Analyzer
                 </p>
               </div>
               <div className="mt-4 md:mt-0 text-right font-mono text-sm space-y-1">
-                <div className="text-[#e8d5b7] bg-[#c41e3a]/20 px-3 py-1 border border-[#c41e3a] tracking-wider text-xs font-bold">
+                <div className="text-sand-gold bg-blood-red/20 px-3 py-1 border border-blood-red tracking-wider text-xs font-bold">
                   STATUS: READY FOR DEPLOYMENT
                 </div>
-                <div className="text-[#d4a574] animate-pulse text-xs tracking-widest">
+                <div className="text-sand-muted text-xs tracking-widest">
                   AMMO: INFINITE
                 </div>
               </div>
             </div>
 
             {/* Грид характеристик */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-mono">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 items-start">
               <div className="space-y-2">
-                <h3 className="text-[#c41e3a] font-bold text-xl uppercase border-l-4 border-[#c41e3a] pl-3">
+                <h3 className="text-blood-text font-semibold text-2xl uppercase tracking-wide border-b border-blood-red/40 pb-2">
                   Экипировка (Стек)
                 </h3>
-                <ul className="text-[#e8d5b7] space-y-1 pl-4 text-sm md:text-base">
+                <ul className="text-sand-gold space-y-2 text-base leading-relaxed">
                   <li>
                     <span className="text-[#d4a574]">[+]</span> Vue 3 & Nuxt 3
                     (Pinia, Composition API)
@@ -110,10 +110,10 @@ export default function AboutMe() {
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-[#c41e3a] font-bold text-xl uppercase border-l-4 border-[#c41e3a] pl-3">
+                <h3 className="text-blood-text font-semibold text-2xl uppercase tracking-wide border-b border-blood-red/40 pb-2">
                   Инфраструктура & Тулзы
                 </h3>
-                <ul className="text-[#e8d5b7] space-y-1 pl-4 text-sm md:text-base">
+                <ul className="text-sand-gold space-y-2 text-base leading-relaxed">
                   <li>
                     <span className="text-[#d4a574]">[+]</span> Git, CI/CD
                     (Vercel), Vite, Figma
@@ -134,20 +134,20 @@ export default function AboutMe() {
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-[#c41e3a] font-bold text-xl uppercase border-l-4 border-[#c41e3a] pl-3">
+                <h3 className="text-blood-text font-semibold text-2xl uppercase tracking-wide border-b border-blood-red/40 pb-2">
                   3D Printing
                 </h3>
-                <p className="text-[#e8d5b7] pl-4 text-sm leading-relaxed">
+                <p className="text-sand-gold text-base leading-relaxed max-w-prose">
                   3D Printing Enthusiast. Печать объектов физического мира с
                   идеальной калибровкой на 3D принтере.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-[#c41e3a] font-bold text-xl uppercase border-l-4 border-[#c41e3a] pl-3">
+                <h3 className="text-blood-text font-semibold text-2xl uppercase tracking-wide border-b border-blood-red/40 pb-2">
                   Бэкграунд
                 </h3>
-                <p className="text-[#e8d5b7] pl-4 text-sm leading-relaxed">
+                <p className="text-sand-gold text-base leading-relaxed max-w-prose">
                   Магистратура (2020) и Аспирантура (2023), Исторический
                   факультет ДонГУ. Способность анализировать массивные объемы
                   данных прошлого для проектирования архитектуры будущего.

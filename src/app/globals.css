@@ -1,21 +1,51 @@
 @import "tailwindcss";
 
+/* Палитра «Сирианская гробница»: чёрный камень, золото песка, багрянец.
+   Принцип Lamborghini DESIGN.md: почти чёрный холст, один золотой акцент, красный — как сигнал. */
 @theme {
-  /* Твоя цветовая палитра Serious Sam */
-  --color-tomb-bg: #160c08;
-  --color-sand-gold: #e8d5b7;
-  --color-sand-muted: #d4a574;
-  --color-blood-red: #c41e3a;
+  --color-tomb-bg: #0b0705;
+  --color-tomb-raised: #140b07;
+  --color-sand-gold: #efdfc2; /* основной текст и заголовки */
+  --color-sand-muted: #d4a574; /* золотой акцент, вторичный текст */
+  --color-blood-red: #c41e3a; /* рамки, заливки, крупные элементы */
+  --color-blood-text: #ff6b7f; /* красный для мелкого текста: >= 6:1 на чёрном */
+}
+
+@theme inline {
+  --font-sans: var(--face-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--face-display), "Arial Narrow", sans-serif;
+  --font-mono: var(--face-code), ui-monospace, monospace;
 }
 
 @layer base {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-tomb-bg text-sand-gold antialiased font-sans;
   }
 
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
   button {
-    @apply appearance-none outline-none ring-0;
+    @apply appearance-none;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-sand-muted);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-blood-red);
+    color: var(--color-sand-gold);
   }
 
   ::-webkit-scrollbar {
@@ -48,6 +78,31 @@
       inset 0 0 10px var(--color-blood-red);
     border: 1px solid var(--color-blood-red);
   }
+
+  /* Эффект сетки поверх фонового изображения */
+  .scanline-grid {
+    background:
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+      );
+    background-size:
+      100% 4px,
+      6px 100%;
+  }
+
+  .neon-glow-red {
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.4);
+    border-color: rgba(196, 30, 58, 0.6);
+  }
+
+  .neon-glow-gold {
+    box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+    border-color: rgba(212, 165, 116, 0.5);
+  }
 }
 
 @keyframes spark {
@@ -70,46 +125,12 @@
   animation: spark 0.15s infinite;
   transform-origin: center;
 }
-@slot core;
 
-:root {
-  --color-tomb-bg: #0d0a09;
-  --color-blood-red: #e11d48;
-  --color-sand-gold: #f59e0b;
-  --color-sand-muted: #78350f;
-}
-
-body {
-  background-color: var(--color-tomb-bg);
-  color: #f3f4f6;
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
-}
-
-/* Эффект сетки поверх фонового изображения */
-.scanline-grid {
-  background:
-    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-    linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 0.06),
-      rgba(0, 255, 0, 0.02),
-      rgba(0, 0, 255, 0.06)
-    );
-  background-size:
-    100% 4px,
-    6px 100%;
-}
-
-/* Брутальные тени */
-.neon-glow-red {
-  box-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
-  border-color: rgba(225, 29, 72, 0.6);
-}
-
-.neon-glow-gold {
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
-  border-color: rgba(245, 158, 11, 0.5);
+/* Декоративное движение отключается; смена состояний (hover, появление) остаётся */
+@media (prefers-reduced-motion: reduce) {
+  .animate-spark,
+  .animate-pulse,
+  .animate-ping {
+    animation: none;
+  }
 }

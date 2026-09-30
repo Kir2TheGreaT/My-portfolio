@@ -7,13 +7,13 @@ const CONTACT_DATA = [
     label: "TELEGRAM_UPLINK",
     value: "@Kir2TheGreaT",
     href: "https://t.me/Kir2TheGreaT",
-    color: "#0088cc",
+    color: "#4db8f0",
   },
   {
     label: "SECURE_MAIL",
     value: "kir2thegreat@mail.ru",
     href: "mailto:kir2thegreat@mail.ru",
-    color: "#c41e3a",
+    color: "#ff6b7f",
   },
   {
     label: "GITHUB_PROFILE",
@@ -34,7 +34,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed border-t-4 border-[#c41e3a]"
+      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat border-t-4 border-[#c41e3a]"
       style={{
         // Мягкое затемнение эпичного египетского заката для идеальной читаемости интерфейса
         backgroundImage: `linear-gradient(to bottom, rgba(10, 5, 4, 0.95), rgba(22, 12, 8, 0.9), rgba(10, 5, 4, 0.95)), url('/Gemini_Generated_Image_wdsikbwdsikbwdsi.png')`,
@@ -48,7 +48,7 @@ export default function Contact() {
 
       <div className="max-w-4xl mx-auto px-4 relative z-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-[#e8d5b7] tracking-tighter uppercase drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)]">
+          <h2 className="text-5xl md:text-6xl font-bold text-sand-gold tracking-wide uppercase [text-shadow:0_4px_20px_rgba(0,0,0,0.9)]">
             Передача <span className="text-[#c41e3a]">Координат</span>
           </h2>
           <div className="w-16 h-[2px] bg-[#c41e3a] mx-auto mt-4"></div>
@@ -60,16 +60,10 @@ export default function Contact() {
           viewport={{ once: true }}
           className="bg-[#0a0504]/95 backdrop-blur-md border-2 border-[#c41e3a] p-1 shadow-[0_0_50px_rgba(0,0,0,0.9)] relative group"
         >
-          {/* Внешние угловые маркеры захвата цели (Target Lock) */}
-          <div className="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-[#c41e3a] group-hover:scale-110 transition-transform"></div>
-          <div className="absolute -top-2 -right-2 w-4 h-4 border-t-2 border-r-2 border-[#c41e3a] group-hover:scale-110 transition-transform"></div>
-          <div className="absolute -bottom-2 -left-2 w-4 h-4 border-b-2 border-l-2 border-[#c41e3a] group-hover:scale-110 transition-transform"></div>
-          <div className="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-[#c41e3a] group-hover:scale-110 transition-transform"></div>
-
           <div className="border border-[#c41e3a]/40 p-6 md:p-10 relative">
             {/* Шапка терминала */}
             <div className="flex justify-between items-center border-b-2 border-[#c41e3a]/30 pb-4 mb-8">
-              <h3 className="text-base md:text-2xl font-black text-[#c41e3a] tracking-widest uppercase font-mono flex items-center gap-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+              <h3 className="text-base md:text-2xl font-bold text-blood-text tracking-wider uppercase font-mono flex items-center gap-2">
                 <span className="inline-block w-2 h-5 bg-[#c41e3a] animate-pulse"></span>
                 ТЕРМИНАЛ NETRICSA v1.0
               </h3>
@@ -113,7 +107,7 @@ export default function Contact() {
             </div>
 
             {/* Статус-бар */}
-            <div className="mt-10 text-center text-[#e8d5b7]/40 text-xs font-mono uppercase tracking-widest">
+            <div className="mt-10 text-center text-sand-gold/70 text-sm font-mono uppercase tracking-wider">
               Система ожидает входящего соединения... Квадрат чист.
             </div>
           </div>

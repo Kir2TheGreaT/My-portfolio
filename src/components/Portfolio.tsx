@@ -13,7 +13,7 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="py-24 relative border-t-4 border-[#c41e3a] overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed"
+      className="py-24 relative border-t-4 border-[#c41e3a] overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
         // Загружаем скриншот и сразу тонируем его в глубокие темные тона Сирианской ночи
         backgroundImage: `linear-gradient(to bottom, rgba(10, 5, 4, 0.92), rgba(22, 12, 8, 0.88)), url('/ChatGPT Image 5 июл. 2026 г., 18_29_02.png')`,
@@ -27,10 +27,10 @@ export default function Portfolio() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-[#e8d5b7] tracking-tighter uppercase drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)]">
+          <h2 className="text-5xl md:text-6xl font-bold text-sand-gold tracking-wide uppercase [text-shadow:0_4px_20px_rgba(0,0,0,0.9)]">
             Личный <span className="text-[#c41e3a]">Инвентарь</span>
           </h2>
-          <p className="text-[#d4a574] font-mono mt-4 uppercase tracking-widest text-sm drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+          <p className="text-sand-muted mt-4 uppercase tracking-widest text-sm font-semibold">
             Доступ к исходным кодам и флагманским разработкам
           </p>
         </div>
@@ -45,10 +45,6 @@ export default function Portfolio() {
             transition={{ duration: 0.5 }}
             className="flex flex-col bg-[#0a0504]/90 backdrop-blur-sm border-2 border-[#d4a574]/40 p-8 md:p-10 text-center shadow-[0_0_40px_rgba(0,0,0,0.7)] group hover:border-[#d4a574] transition-colors relative"
           >
-            {/* Олдскульные уголки HUD */}
-            <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#d4a574]/30 group-hover:border-[#d4a574]"></div>
-            <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-[#d4a574]/30 group-hover:border-[#d4a574]"></div>
-
             <div className="w-20 h-20 mx-auto mb-6 bg-[#c41e3a]/20 border border-[#c41e3a] flex items-center justify-center rounded-sm rotate-45 group-hover:rotate-0 transition-all duration-500 shrink-0">
               <svg
                 className="w-10 h-10 text-[#c41e3a] -rotate-45 group-hover:rotate-0 transition-all duration-500"
@@ -63,10 +59,10 @@ export default function Portfolio() {
               </svg>
             </div>
 
-            <h3 className="text-2xl font-black text-[#e8d5b7] uppercase mb-2">
+            <h3 className="text-3xl font-bold text-sand-gold uppercase mb-3 tracking-wide">
               GitHub Arsenal
             </h3>
-            <p className="text-[#d4a574] mb-8 font-mono text-sm grow">
+            <p className="text-sand-muted mb-8 text-base leading-relaxed grow max-w-[38ch] mx-auto">
               Исходные коды боевых задач, пет-проектов и экспериментов. Доступ
               открыт для проверки архитектуры и чистоты кода.
             </p>
@@ -76,7 +72,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={playCannonShot} /* Добавили звук пушки на клик */
-              className="mt-auto inline-block px-8 py-4 bg-transparent border-2 border-[#d4a574] text-[#d4a574] font-black uppercase tracking-widest hover:bg-[#d4a574] hover:text-[#0a0504] transition-all skew-x-[-10deg]"
+              className="mt-auto inline-block px-8 py-4 bg-transparent border-2 border-[#d4a574] text-[#d4a574] font-bold uppercase tracking-widest hover:bg-[#d4a574] hover:text-[#0a0504] transition-colors duration-200 skew-x-[-10deg]"
             >
               <span className="skew-x-[10deg] block">Изучить репозиторий</span>
             </a>
@@ -91,13 +87,9 @@ export default function Portfolio() {
             className="flex flex-col bg-[#0a0504]/90 backdrop-blur-sm border-2 border-[#c41e3a]/50 p-8 md:p-10 text-center shadow-[0_0_40px_rgba(196,30,58,0.2)] group hover:border-[#c41e3a] transition-colors relative overflow-hidden"
           >
             {/* Лейбл "Флагман" в углу */}
-            <div className="absolute top-4 right-[-35px] bg-[#c41e3a] text-[#e8d5b7] text-[10px] font-black tracking-widest uppercase py-1 px-10 rotate-45 shadow-md z-30">
+            <div className="absolute top-4 right-[-35px] bg-[#c41e3a] text-[#e8d5b7] text-xs font-bold tracking-widest uppercase py-1 px-10 rotate-45 shadow-md z-30">
               Флагман
             </div>
-
-            {/* Олдскульные уголки HUD */}
-            <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#c41e3a]/40 group-hover:border-[#c41e3a]"></div>
-            <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-[#c41e3a]/40 group-hover:border-[#c41e3a]"></div>
 
             <div className="w-20 h-20 mx-auto mb-6 bg-[#d4a574]/10 border border-[#d4a574] flex items-center justify-center rounded-sm rotate-45 group-hover:rotate-0 transition-all duration-500 shrink-0">
               <svg
@@ -115,12 +107,12 @@ export default function Portfolio() {
               </svg>
             </div>
 
-            <h3 className="text-2xl font-black text-[#c41e3a] uppercase mb-2">
+            <h3 className="text-3xl font-bold text-blood-text uppercase mb-3 tracking-wide">
               Проект: MORENT
             </h3>
-            <p className="text-[#e8d5b7] mb-8 font-mono text-sm grow">
+            <p className="text-sand-gold mb-8 text-base leading-relaxed grow max-w-[38ch] mx-auto">
               Агрегатор аренды автомобилей. Мощная архитектура на{" "}
-              <span className="text-[#c41e3a] font-bold">Nuxt 3</span>.
+              <span className="text-blood-text font-bold">Nuxt 3</span>.
               Полностью готовый продукт со сложной системой фильтрации, SSR и
               адаптивным UI.
             </p>
@@ -130,7 +122,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={playCannonShot} /* Добавили звук пушки на клик */
-              className="mt-auto inline-block px-8 py-4 bg-[#c41e3a]/10 border-2 border-[#c41e3a] text-[#c41e3a] font-black uppercase tracking-widest hover:bg-[#c41e3a] hover:text-[#0a0504] transition-all skew-x-[-10deg] shadow-[0_0_15px_rgba(196,30,58,0.4)]"
+              className="mt-auto inline-block px-8 py-4 bg-blood-red/10 border-2 border-blood-red text-blood-text font-bold uppercase tracking-widest hover:bg-blood-red hover:text-sand-gold transition-colors duration-200 skew-x-[-10deg]"
             >
               <span className="skew-x-[10deg] block">Запустить симуляцию</span>
             </a>

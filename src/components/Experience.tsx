@@ -61,7 +61,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed border-t-4 border-[#d4a574]/10"
+      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat border-t-4 border-[#d4a574]/10"
       style={{
         // Глубокое тонирование скриншота древнеегипетского храма под общую палитру
         backgroundImage: `linear-gradient(to bottom, rgba(10, 5, 4, 0.96), rgba(22, 12, 8, 0.88), rgba(10, 5, 4, 0.96)), url('/Gemini_Generated_Image_jub0itjub0itjub0.png')`,
@@ -76,7 +76,7 @@ export default function Experience() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-black text-[#e8d5b7] tracking-tighter uppercase drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)]">
+          <h2 className="text-5xl md:text-6xl font-bold text-sand-gold tracking-wide uppercase [text-shadow:0_4px_20px_rgba(0,0,0,0.9)]">
             Боевой <span className="text-[#c41e3a]">Путь</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#c41e3a] to-transparent mx-auto mt-4"></div>
@@ -122,35 +122,27 @@ export default function Experience() {
                         isEven ? "md:text-right" : "md:text-left"
                       } text-left`}
                     >
-                      {/* Древнеегипетские угловые элементы интерфейса HUD */}
-                      <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#d4a574]/30 group-hover:border-[#c41e3a] transition-colors"></div>
-                      <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#d4a574]/30 group-hover:border-[#c41e3a] transition-colors"></div>
-                      <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#d4a574]/30 group-hover:border-[#c41e3a] transition-colors"></div>
-                      <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#d4a574]/30 group-hover:border-[#c41e3a] transition-colors"></div>
-
-                      <span className="inline-block px-3 py-1 bg-[#c41e3a]/10 text-[#c41e3a] text-xs font-black uppercase tracking-widest border border-[#c41e3a]/40 mb-4 shadow-[0_0_10px_rgba(196,30,58,0.1)]">
+                      <span className="inline-block px-3 py-1 bg-blood-red/10 text-blood-text text-sm font-semibold uppercase tracking-wider border border-blood-red/50 mb-4">
                         {item.year}
                       </span>
 
-                      <h3 className="text-2xl font-black text-[#e8d5b7] mb-3 uppercase tracking-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                      <h3 className="text-3xl font-bold text-sand-gold mb-3 uppercase tracking-wide">
                         {item.role}
                       </h3>
 
-                      <p className="text-[#d4a574]/90 text-sm md:text-base font-sans leading-relaxed mb-5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+                      <p className="text-sand-muted text-base font-sans leading-relaxed mb-5">
                         {item.mission}
                       </p>
 
                       <div
-                        className={`text-xs font-mono text-[#c41e3a] font-bold tracking-wider mt-auto flex items-center gap-1 ${
+                        className={`text-sm font-mono text-blood-text font-bold mt-auto flex flex-wrap items-center gap-x-2 ${
                           isEven
                             ? "md:justify-end justify-start"
                             : "justify-start"
                         }`}
                       >
-                        <span className="opacity-60 text-[#e8d5b7]">
-                          &gt; AMMO:
-                        </span>
-                        <span className="text-[#c41e3a] drop-shadow-[0_0_5px_rgba(196,30,58,0.5)]">
+                        <span className="text-sand-gold/70">&gt; AMMO:</span>
+                        <span className="text-blood-text">
                           {item.ammo}
                         </span>
                       </div>
