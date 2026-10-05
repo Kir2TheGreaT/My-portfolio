@@ -160,11 +160,12 @@ export default function Portfolio() {
               <span className="text-blood-text font-bold">Nuxt 4</span> и{" "}
               <span className="text-blood-text font-bold">Tailwind</span>:
               каталог работ, калькулятор примерной стоимости и светлая с тёмной
-              темами.
+              темами. Работает на боевом домене, развёрнут на собственном
+              сервере (Docker, Caddy, HTTPS), настроено базовое SEO.
             </p>
 
             <a
-              href="https://my-3d-print-site-xqmr.vercel.app/"
+              href="https://3dprintdonetsk.ru"
               target="_blank"
               rel="noopener noreferrer"
               onClick={playCannonShot}
